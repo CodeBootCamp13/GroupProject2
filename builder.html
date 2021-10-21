@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="/css/quiz.css">
+
+	<script type="text/javascript" src="/js/builder.js"></script>
+</head>
+<body>
+	
+	<header>
+		<h1>CBC Quizzes</h1>
+	
+		<h2 id="subTitle">Quiz Builder</h2>
+
+		<button class="new">Create Quiz</button>
+	</header>
+
+	<!-- form to generate our quiz -->
+	<div class="container">
+
+		<div class="quizForm">
+			<form action="/builder.html" method="post">
+				<label for="question">Question</label>
+				<input type="text" name="question" id="question">
+
+				<!-- ... inputs for answers ... -->
+			</form>
+		</div>
+
+		<div class="generatedQuizJson" style="white-space:pre;">
+			[
+				{
+					"question": "What does JSON stand for?",
+					"answers": [
+						{ "answer": "Javascript Object Notation", "correct": true },
+						{ "answer": "Javascript Object Notation", "correct": false }
+					]
+				}
+			]
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>
