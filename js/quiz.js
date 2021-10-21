@@ -10,12 +10,26 @@ let xhr = new XMLHttpRequest();
 xhr.open('GET', `/questions/${quizName}.json`);
 xhr.onload = function(){
     console.log(this);
-    quizData= JSON.parse(this.responseText)
+    quizData= JSON.parse(this.responseText);
+
+	// 3. Randomize the questions
+	quizData.sort(() => (Math.random() > .5) ? 1 : -1);
+
 };
 xhr.send();
 // 3. Randomize the questions
 
 // 4. Display the first question
+function displayQuestion() {
+	let randomQuestion = quizData.shift();
+	console.log(randomQuestion);
+	document.getElementById('questionText').innerText = randomQuestion.question;
+	for ( let i = 0; i < randomQuestion.answers.length; i++ ) {
+		let answer = randomQuestion.answers[i];
+		document.getElementById('answer_' + (i+1)).innerText = answer.; 
+	}
+}
+
 
 // 5. Create the event listeners for the possible answers
 
