@@ -20,6 +20,16 @@ xhr.send();
 
 
 // 4. Display the first question
+function displayQuestion() {
+	let randomQuestion = quizData.shift();
+	console.log(randomQuestion);
+	document.getElementById('questionText').innerText = randomQuestion.question;
+	for ( let i = 0; i < randomQuestion.answers.length; i++ ) {
+		let answer = randomQuestion.answers[i];
+		document.getElementById('answer_' + (i+1)).innerText = answer.; 
+	}
+}
+
 
 function displayQuestion(){
 
