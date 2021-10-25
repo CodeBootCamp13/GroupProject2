@@ -60,3 +60,7 @@ button {
     text-align: center;
     background-color: lightgray;
 }
+
+.hidden {
+    display: none;
+}
